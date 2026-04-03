@@ -1,0 +1,2 @@
+docker build failed because package.json dependency was missing
+npm ERR! Cannot find module 'express'

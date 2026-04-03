@@ -1,0 +1,20 @@
+name: AI Log Analyzer
+
+on:
+  workflow_dispatch:
+
+jobs:
+  analyze-log:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run AI log analyzer
+        run: python3 ai/log_analyzer.py ai/ci_error.log
