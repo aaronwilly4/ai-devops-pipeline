@@ -14,7 +14,7 @@ def analyze_log(log_text: str) -> str:
     if "terraform" in log_text and "error" in log_text:
         return "Possible Terraform configuration issue. Check syntax, providers, and variable values."
 
-    if "port 3000 is already in use" in log_text or "eaddrinuse" in log_text:
+    if "eaddrinuse" in log_text or "port 3000 is already in use" in log_text:
         return "Possible port conflict. Stop the running service or use a different port."
 
     return "No known issue matched. Review the logs manually."
@@ -38,5 +38,5 @@ def main():
     print(result)
 
 
-if __name__ == "__main__": main()
-
+if __name__ == "__main__":
+    main()
